@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 function Movies(props) {
   const API_KEY = process.env.REACT_APP_API;
   const [movies, setMovies] = useState([]);
@@ -42,7 +42,9 @@ function Movies(props) {
         onChange={handleSearch}
       />
       {movies.map(movie => (
-        <h2>{movie.title}</h2>
+        <Link key={movie.id} to={`/movies/${movie.id}`}>
+          <h2>{movie.title}</h2>
+        </Link>
       ))}
     </div>
   );
