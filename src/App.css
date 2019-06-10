@@ -8,7 +8,8 @@
   align-items: center;
   min-height: 10vh;
   background-color: #212121;
-  color: rgb(226, 48, 78);
+  /* color: rgb(226, 48, 78); */
+  color: rgb(106, 192, 69);
 }
 
 .navList {
@@ -27,5 +28,5 @@
 
 .navLink {
   text-decoration: none;
-  color: rgb(226, 48, 78);
+  color: rgb(106, 192, 69);
 }

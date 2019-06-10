@@ -1,0 +1,33 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 350px auto 50px 200px;
+  grid-template-rows: 10px 50px auto;
+}
+
+.movie-img {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: row1-start;
+  grid-row-end: 3;
+}
+
+.movie-details {
+  text-align: left;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: row1-start;
+  grid-row-end: 3;
+}
+
+.genres {
+  display: flex;
+}
+
+.genres h3 {
+  margin: 0;
+}
+
+.star {
+  margin-right: 5px;
+  color: rgb(106, 192, 69);
+}
