@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import '../style/MoviePage.css';
 import { Link } from 'react-router-dom';
+import Loader from '../loader.gif';
 
 export default function MoviePage({ match }) {
   const API_KEY = process.env.REACT_APP_API;
 
   useEffect(() => {
+    setLoader(true);
     fetchitems();
     console.log(match);
       },[match.params.id]); //eslint-disable-line
@@ -15,6 +17,7 @@ export default function MoviePage({ match }) {
 
   const [poster, setPoster] = useState('');
   const [genres, setGenres] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   const fetchitems = async () => {
     const data = await fetch(
@@ -40,44 +43,51 @@ export default function MoviePage({ match }) {
 
     setPoster(poster_url);
     setGenres(movie.genres);
+    setLoader(false);
   };
   const genreStyle = {
     paddingRight: '5px'
   };
-  return (
-    <div>
-      <div className="grid-container">
-        <img src={poster} alt="poster" width="300px" className="movie-img" />
-        <div className="movie-details">
-          <h1>{movie.title}</h1>
-          <div className="genres">
-            {genres.map(genre =>
-              genres.indexOf(genre) !== genres.length - 1 ? (
-                <h3 style={genreStyle}>
-                  {genre.name}
-                  <span style={{ paddingLeft: '5px' }}>/</span>
-                </h3>
-              ) : (
-                <h3 style={genreStyle}>{genre.name}</h3>
-              )
-            )}
+  if (!loader) {
+    return (
+      <div>
+        <div className="container">
+          <div className="grid-container">
+            <img src={poster} alt="poster" className="movie-img" />
+            <div className="movie-details">
+              <h1>{movie.title}</h1>
+              <div className="genres">
+                {genres.map(genre =>
+                  genres.indexOf(genre) !== genres.length - 1 ? (
+                    <h3 style={genreStyle}>
+                      {genre.name}
+                      <span style={{ paddingLeft: '5px' }}>/</span>
+                    </h3>
+                  ) : (
+                    <h3 style={genreStyle}>{genre.name}</h3>
+                  )
+                )}
+              </div>
+              <h3>
+                <i className="fa fa-star star" aria-hidden="true" />
+                {movie.vote_average}
+                <span style={{ fontSize: '0.8em', margin: '0px 5px' }}>
+                  ({movie.vote_count})
+                </span>
+              </h3>
+              <h4 style={{ marginTop: '50px' }}>Overview</h4>
+              <p>{movie.overview}</p>
+            </div>
           </div>
-          <h3>
-            <i className="fa fa-star star" aria-hidden="true" />
-            {movie.vote_average}
-            <span style={{ fontSize: '0.8em', margin: '0px 5px' }}>
-              ({movie.vote_count})
-            </span>
-          </h3>
-          <h4 style={{ marginTop: '50px' }}>Overview</h4>
-          <p>{movie.overview}</p>
         </div>
+        {similar.map(movie => (
+          <Link key={movie.id} to={`/movies/${movie.id}`}>
+            <h2>{movie.title}</h2>
+          </Link>
+        ))}
       </div>
-      {similar.map(movie => (
-        <Link key={movie.id} to={`/movies/${movie.id}`}>
-          <h2>{movie.title}</h2>
-        </Link>
-      ))}
-    </div>
-  );
+    );
+  }
+
+  return <img src={Loader} alt="loader" />;
 }
