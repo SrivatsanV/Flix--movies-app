@@ -1,0 +1,47 @@
+.suggestions {
+  list-style: none;
+  /* margin-top: 25px;
+  margin-left: 608px;
+  margin-right: 10%; */
+  margin: 0;
+  padding: 0;
+  width: 303px;
+  overflow: hidden;
+  z-index: 9;
+  position: fixed;
+}
+
+.suggestions li {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid #000;
+  overflow: hidden;
+  background-color: #1d1d1d;
+}
+.suggest-card {
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.suggest-card p {
+  font-size: 0.7em;
+  margin-top: 0;
+}
+.suggest-card img {
+  margin-right: 10px;
+}
+.suggest-card-details {
+  display: block;
+  text-align: left;
+}
+
+.suggest-card-details h4 {
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.suggestions li:hover {
+  background-color: #212121;
+}

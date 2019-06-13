@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Suggestions from './Suggestions';
 import Loader from '../loader.gif';
 
-function Movies(props) {
+function Browse(props) {
   const API_KEY = process.env.REACT_APP_API;
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState('');
@@ -65,6 +65,9 @@ function Movies(props) {
           onChange={handleSearch}
           style={searchBar}
         />
+        <div>
+          <h1>Enter</h1>
+        </div>
       </form>
     );
   } else if (search && movies.length === 0) {
@@ -76,6 +79,9 @@ function Movies(props) {
           onChange={handleSearch}
           style={searchBar}
         />
+        <div>
+          <h1>No results</h1>
+        </div>
       </form>
     );
   } else {
@@ -95,4 +101,4 @@ function Movies(props) {
   }
 }
 
-export default Movies;
+export default Browse;

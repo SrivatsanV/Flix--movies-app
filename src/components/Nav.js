@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 export default function Nav() {
   return (
     <div>
-      <nav className="navBar">
-        <h2>Flix</h2>
+      <nav className="navBar sticky">
+        <Link to="/" className="navLink">
+          <h2>Flix</h2>
+        </Link>
         <ul className="navList">
           <li>
             <Link to="/about" className="navLink">

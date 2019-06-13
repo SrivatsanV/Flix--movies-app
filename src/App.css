@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  color: #ffffff;
 }
 
 .navBar {
@@ -7,9 +8,11 @@
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background-color: #212121;
+  background-color: #000000;
   /* color: rgb(226, 48, 78); */
   color: rgb(106, 192, 69);
+  overflow: hidden;
+  z-index: 6;
 }
 
 .navList {
@@ -29,4 +32,9 @@
 .navLink {
   text-decoration: none;
   color: rgb(106, 192, 69);
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
