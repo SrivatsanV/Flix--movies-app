@@ -89,9 +89,35 @@
   font-weight: bold;
   letter-spacing: 1px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .view:hover {
   padding: 7px 14px;
   background: rgb(119, 190, 80);
+}
+
+@media only screen and (max-width: 1000px) {
+  .outer-wrap {
+    width: 149px;
+  }
+  .wrapperCard {
+    margin: 0 auto;
+    position: relative;
+    width: 140px;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    border: 2px solid #fff;
+    display: inline-block;
+    border-radius: 3px;
+  }
+  .wrapperCard:hover {
+    border: 2px solid #75c74e;
+  }
+  .content {
+    display: none;
+  }
+  .view {
+    display: none;
+  }
 }
