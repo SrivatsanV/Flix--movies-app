@@ -18,26 +18,26 @@ class MovieCard extends React.Component {
     return (
       <div key={movie.id}>
         <div className="outer-wrap">
-          <div className="wrapperCard">
-            <img
-              src={poster_src}
-              width="100%"
-              id="dagger"
-              alt="poster"
-              onLoad={this.handleImageChange}
-              onError={this.handleImageChange}
-            />
-            <div className=" content" id="poster">
-              <i className="fas fa-star" />
-              <h2>{movie.vote_average}/10</h2>
-              <Link key={movie.id} to={`/movies/${movie.id}`} className="view">
-                View
-              </Link>
+          <Link key={movie.id} to={`/movies/${movie.id}`}>
+            <div className="wrapperCard">
+              <img
+                src={poster_src}
+                width="100%"
+                id="dagger"
+                alt="poster"
+                onLoad={this.handleImageChange}
+                onError={this.handleImageChange}
+              />
+              <div className=" content" id="poster">
+                <i className="fas fa-star" />
+                <h2>{movie.vote_average}/10</h2>
+                <button className="view">View</button>
+              </div>
             </div>
-          </div>
-          <div className="text-wrap">
-            <p className="titleCard">{movie.title}</p>
-          </div>
+            <div className="text-wrap">
+              <p className="titleCard">{movie.title}</p>
+            </div>
+          </Link>
         </div>
       </div>
     );

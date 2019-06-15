@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 350px auto 50px;
   grid-template-rows: 10px 50px auto;
+  margin-top: 10vh;
 }
 
 .movie-img {
@@ -9,7 +10,9 @@
   grid-column-end: 2;
   grid-row-start: row1-start;
   grid-row-end: 3;
-  width: 300px;
+  width: 250px;
+  border: 5px solid #fff;
+  border-radius: 3px;
 }
 
 .movie-details {
@@ -40,9 +43,11 @@
   .grid-container {
     display: block;
     text-align: left;
+    margin-top: 20vh;
   }
   .container {
-    margin: 2vh 16vh;
+    margin: 2vh 10%;
+    overflow: auto;
   }
   .movie-img {
     width: 200px;

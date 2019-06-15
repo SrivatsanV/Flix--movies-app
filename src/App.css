@@ -38,3 +38,50 @@
   top: 0;
   width: 100%;
 }
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+.resultsWrapper {
+  display: grid; /* 1 */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: "10px"; /* 4 */
+}
+@media only screen and (max-width: 1000px) {
+  .resultsWrapper {
+    display: grid; /* 1 */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: "10px"; /* 4 */
+  }
+}
+
+/*Loader*/
+.lds-dual-ring {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
