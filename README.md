@@ -1,9 +1,9 @@
-##Overview of the app
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Built using React Hooks and movieDb api : [Link to the api](https://www.themoviedb.org/documentation/api).
+## Overview of the web app
+A responisive, UI centric web application built using ReactJS and the movieDb api : [Link to the api](https://www.themoviedb.org/documentation/api).
 
-## Available Scripts
+The web app is hosted on heroku plaform : [Link to the website](https://flix-search-101.herokuapp.com/).
 
+## Available Scripts for running/testing the project locally 
 In the project directory, you can run:
 
 ### `npm start`
