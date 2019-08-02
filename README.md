@@ -3,6 +3,16 @@ A responisive, UI centric web application built using ReactJS and the movieDb ap
 
 The web app is hosted on heroku plaform : [Link to the website](https://flix-search-101.herokuapp.com/).
 
+## Preview of the Web App
+
+#### Home Page
+![Home Page](https://i.imgur.com/dwxNi9e.png)
+
+
+#### Movie Details Page
+![Movie Details](https://i.imgur.com/9RLKa7C.png)
+
+
 ## Available Scripts for running/testing the project locally 
 In the project directory, you can run:
 
